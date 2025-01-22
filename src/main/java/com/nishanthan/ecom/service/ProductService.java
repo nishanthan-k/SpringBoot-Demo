@@ -16,4 +16,9 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return repo.findAll();
     }
+
+    public Product getProduct(int id) {
+        // return empty product(null) if no product found with that id
+        return repo.findById(id).orElse(new Product());
+    }
 }
